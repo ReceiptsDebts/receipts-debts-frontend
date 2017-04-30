@@ -1,15 +1,16 @@
-/**
- * Created by crist on 29/04/2017.
- */
-const gulp = require("gulp");
-const util = require("gulp-util");
+const gulp = require('gulp');
+const fs = require('fs-extra');
+const util = require('gulp-util');
 
-require("./gulpTasks/app");
-require("./gulpTasks/deps");
-require("./gulpTasks/server");
+gulp.task('default', () => {
+  fs.walk('gulpTasks').on('data', (file) => {
+    if ((/\.(js)$/i).test(file.path)) require(file.path);
+  }).on('end', function () {
+    gulp.start('build');
+  })
+});
 
-
-gulp.task("default", () => {
-  if(util.env.production) gulp.start("deps", "app");
-  else  gulp.start("deps", "app", "server");
+gulp.task('build', () => {
+  if (util.env.production) gulp.start('deps', 'app');
+  else gulp.start('deps', 'app', 'server');
 });
