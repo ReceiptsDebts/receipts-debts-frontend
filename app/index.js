@@ -1,5 +1,7 @@
-angular.module('debtsCredits', [
-  'ui.router',
-  'ngAnimate',
-  'toastr'
-]);
+(function () {
+  angular.module('debtsCredits', [
+    'ui.router',
+    'ngAnimate',
+    'toastr'
+  ]);
+})();

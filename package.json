@@ -17,17 +17,15 @@
     "url": "https://github.com/ReceiptsDebts/receipts-debts-frontend/issues"
   },
   "homepage": "https://github.com/ReceiptsDebts/receipts-debts-frontend#readme",
-  "dependencies": {
+  "devDependencies": {
     "admin-lte": "^2.3.6",
     "angular": "^1.5.8",
     "angular-animate": "^1.5.8",
     "angular-toastr": "^2.0.0",
     "angular-ui-router": "^0.3.1",
-    "font-awesome": "^4.6.3"
-  },
-  "devDependencies": {
     "babel-preset-es2015": "^6.9.0",
     "fs-extra": "^0.30.0",
+    "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",

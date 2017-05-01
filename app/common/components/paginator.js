@@ -1,11 +1,12 @@
-angular.module('debtsCredits').component('paginator', {
-   bindings: {
-     url: '@',
-     pages: '@',
-   },
-   controller: ['$location', function($location) {
-     this.$onInit = function() {
-        var pages = parseInt(this.pages) || 1;
+(function () {
+  angular.module('debtsCredits').component('paginator', {
+    bindings: {
+      url: '@',
+      pages: '@',
+    },
+    controller: ['$location', function($location) {
+      this.$onInit = function() {
+        let pages = parseInt(this.pages) || 1;
         this.pagesArray = Array(pages).fill(0).map((e, i) => i + 1);
         this.current = parseInt($location.search().page) || 1;
         this.needPagination = this.pages > 1;
@@ -13,12 +14,11 @@ angular.module('debtsCredits').component('paginator', {
         this.hasNext = this.current < this.pages;
 
         this.isCurrent = function(i) {
-          return this.current == i
+          return this.current == i;
         }
-     }
-
-   }],
-   template: `
+      }
+    }],
+    template: `
       <ul ng-if="$ctrl.needPagination"
         class="pagination pagination-sm no-margin pull-right">
         <li ng-if="$ctrl.hasPrev">
@@ -33,4 +33,5 @@ angular.module('debtsCredits').component('paginator', {
         </li>
       </ul>
    `
-});
+  });
+})();

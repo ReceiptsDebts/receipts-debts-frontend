@@ -1,5 +1,5 @@
 angular.module('debtsCredits').constant('consts', {
-  appName: 'MEAN - Primeira Aplicação',
+  appName: 'MEAN - Dashboard Debts Credits',
   version: '1.0',
   owner: 'csvinhal',
   year: '2017',
